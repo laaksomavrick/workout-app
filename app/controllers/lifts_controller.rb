@@ -1,4 +1,4 @@
-class TodaysWorkoutController < ApplicationController
+class LiftsController < ApplicationController
   before_action :authenticate_user!
 
   def index
