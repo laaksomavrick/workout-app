@@ -1,1 +1,5 @@
-<h1>lifts</h1>
+<ul class="list-group">
+  <%= @lifts.each do |lift| %>
+    <li class="list-group-item"><%= lift.name %></li>
+  <% end %>
+</ul>
