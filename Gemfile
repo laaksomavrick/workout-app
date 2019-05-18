@@ -9,6 +9,7 @@ gem 'puma', '~> 3.11'
 gem 'webpacker'
 gem 'devise'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

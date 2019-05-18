@@ -59,6 +59,8 @@ GEM
       warden (~> 1.2.3)
     dotenv (0.7.0)
     erubi (1.8.0)
+    faker (1.9.3)
+      i18n (>= 0.7)
     ffi (1.10.0)
     foreman (0.64.0)
       dotenv (~> 0.7.0)
@@ -165,6 +167,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   devise
+  faker
   foreman
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
