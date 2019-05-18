@@ -1,0 +1,13 @@
+<%= form_for @lift, url: {action: "update"} do |f| %>
+  <div class="form-group">
+    <%= f.label("Lift name") %>
+    <%= f.text_field(:name, class: "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label("One rep max") %>
+    <%= f.text_field(:one_rep_max, class: "form-control") %>
+  </div>
+
+  <%= f.submit("Update", class: "btn btn-primary") %>
+<% end %>

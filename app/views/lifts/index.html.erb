@@ -1,5 +1,5 @@
 <ul class="list-group">
   <%= @lifts.each do |lift| %>
-    <li class="list-group-item"><%= lift.name %></li>
+    <%= link_to "#{lift.name}", lift_path(lift.id), class: "list-group-item list-group-item-action" %>
   <% end %>
 </ul>
