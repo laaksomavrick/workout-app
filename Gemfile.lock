@@ -47,6 +47,9 @@ GEM
     bindex (0.7.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
+    bootstrap_form (4.2.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     builder (3.2.3)
     byebug (11.0.1)
     concurrent-ruby (1.1.5)
@@ -165,6 +168,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
+  bootstrap_form (>= 4.2.0)
   byebug
   devise
   faker

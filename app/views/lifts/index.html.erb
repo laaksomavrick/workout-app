@@ -1,5 +1,6 @@
 <ul class="list-group">
-  <%= @lifts.each do |lift| %>
-    <%= link_to "#{lift.name}", lift_path(lift.id), class: "list-group-item list-group-item-action" %>
+  <% @lifts.each do |lift| %>
+    <%= link_to "#{lift.name}", edit_lift_path(lift.id), class: "list-group-item list-group-item-action" %>
   <% end %>
 </ul>
+<%= link_to 'New lift', new_lift_path, :class => "btn btn-primary"%>

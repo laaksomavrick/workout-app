@@ -5,17 +5,35 @@ class LiftsController < ApplicationController
     @lifts = current_user.lifts.all.order(:name)
   end
 
-  def show
+  def edit
     id = params[:id]
     @lift = Lift.find(id)
+  end
+
+  def new
+    @lift = Lift.new
+  end
+
+  def create
+    @lift = current_user.lifts.create(lift_params)
+    if @lift.valid?
+      flash[:success] = "Created lift."
+      redirect_to edit_lift_path(@lift)
+    else
+      flash[:error] = "Failed to create lift."
+      redirect_to new_lift_path
+    end
   end
 
   def update
     id = params[:id]
     @lift = Lift.find(id)
-    @lift.update(lift_params)
-    flash[:success] = "#{@lift.name} updated."
-    redirect_to @lift
+    if @lift.update(lift_params)
+      flash[:success] = "#{@lift.name} updated."
+    else
+      flash[:error] = "#{@lift.name} failed to update."
+    end
+    redirect_to edit_lift_path(@lift)
   end
 
   private

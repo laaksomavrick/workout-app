@@ -1,0 +1,7 @@
+<% text = action.capitalize %>
+
+<%= bootstrap_form_for @lift, url: {action: action} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.number_field :one_rep_max %>
+  <%= f.submit "#{text}" %>
+<% end %>
