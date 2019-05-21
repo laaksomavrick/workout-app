@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_18_034851) do
+ActiveRecord::Schema.define(version: 2019_05_21_005531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,5 +36,28 @@ ActiveRecord::Schema.define(version: 2019_05_18_034851) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "workout_day_lifts", force: :cascade do |t|
+    t.bigint "workout_day_id"
+    t.bigint "lift_id"
+    t.integer "reps", null: false
+    t.integer "one_rep_max_percentage", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lift_id"], name: "index_workout_day_lifts_on_lift_id"
+    t.index ["workout_day_id"], name: "index_workout_day_lifts_on_workout_day_id"
+  end
+
+  create_table "workout_days", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name", null: false
+    t.integer "ordinal", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_workout_days_on_user_id"
+  end
+
   add_foreign_key "lifts", "users"
+  add_foreign_key "workout_day_lifts", "lifts"
+  add_foreign_key "workout_day_lifts", "workout_days"
+  add_foreign_key "workout_days", "users"
 end

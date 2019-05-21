@@ -1,4 +1,4 @@
-<ul class="list-group">
+<ul class="list-group mb-4">
   <% @lifts.each do |lift| %>
     <%= link_to "#{lift.name}", edit_lift_path(lift.id), class: "list-group-item list-group-item-action" %>
   <% end %>
