@@ -15,6 +15,12 @@ lifts_hashes = [
   {name: 'Overhead Press', one_rep_max: '150'}
 ]
 
+workout_day_hashes = [
+  {name: 'Upper Body Day', ordinal: 0},
+  {name: 'Lower Body Day', ordinal: 1}
+]
+
 user = User.create(email: Faker::Internet.email, password: 'password')
 user.lifts = Lift.create(lifts_hashes)
+user.days = WorkoutDay.create(workout_day_hashes)
 

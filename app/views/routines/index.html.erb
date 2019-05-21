@@ -1,1 +1,7 @@
-<h1> routine </h1>
+<ul class="list-group mb-4">
+  <% @days.each do |day| %>
+    <div class="list-group-item list-group-item-action"><%= day.name %></div>
+  <% end %>
+</ul> 
+
+<%= link_to 'New workout day', new_workout_day_path, :class => "btn btn-primary"%>
